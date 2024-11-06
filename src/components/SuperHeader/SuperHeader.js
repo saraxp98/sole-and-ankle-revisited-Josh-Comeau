@@ -23,7 +23,8 @@ const SuperHeader = () => {
 };
 
 const Wrapper = styled.div`
-
+    display: none;
+    
     @media ${QUERIES.tabletAndUp} {
         display: flex;
         align-items: center;
