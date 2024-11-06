@@ -23,3 +23,9 @@ export const BREAKPOINTS = {
     tablet: 59.375,
     laptop: 81.25,
 }
+
+const QUERIES = {
+    'phoneAndUp': `(min-width: ${BREAKPOINTS.phone}rem)`,
+    'tabletAndUp': `(min-width: ${BREAKPOINTS.tablet}rem)`,
+    'laptopAndUp': `(min-width: ${BREAKPOINTS.laptop}rem)`,
+}
