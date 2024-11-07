@@ -77,9 +77,6 @@ const Nav = styled.nav`
             display: none;
         }
     }
-    @media ${MAX_QUERIES.tablet} {
-        justify-content: space-between;
-    }
 `;
 
 const Side = styled.div`
