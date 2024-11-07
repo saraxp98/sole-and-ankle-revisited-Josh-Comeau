@@ -1,10 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import {COLORS, WEIGHTS} from '../../constants';
+import {COLORS, MAX_QUERIES, MIN_QUERIES, WEIGHTS} from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
+import {Menu, Search, ShoppingBag} from "react-feather";
+import UnstyledButton from "../UnstyledButton";
 
 const Header = () => {
     const [showMobileMenu, setShowMobileMenu] = React.useState(false);
@@ -28,8 +30,18 @@ const Header = () => {
                     <NavLink href="/women">Women</NavLink>
                     <NavLink href="/kids">Kids</NavLink>
                     <NavLink href="/collections">Collections</NavLink>
+
+                    <UnstyledButton>
+                        <ShoppingBag id="shoppingBagBtn"/>
+                    </UnstyledButton>
+                    <UnstyledButton>
+                        <Search id="searchBtn"/>
+                    </UnstyledButton>
+                    <UnstyledButton onClick={() => setShowMobileMenu(true)}>
+                        <Menu id="menuBtn"/>
+                    </UnstyledButton>
                 </Nav>
-                <Side/>
+                <Side id="side4Laptop"/>
             </MainHeader>
 
             <MobileMenu
@@ -51,22 +63,49 @@ const MainHeader = styled.div`
 const Nav = styled.nav`
     display: flex;
     gap: 48px;
-    margin: 0px 48px;
+    margin: 0 48px;
+    //background-color: crimson;
+
+    @media ${MAX_QUERIES.phone} {
+        gap: 1rem;
+    }
+
+    @media ${MIN_QUERIES.tablet} {
+        gap: 2rem;
+
+        #shoppingBagBtn, #searchBtn, #menuBtn {
+            display: none;
+        }
+    }
+    @media ${MAX_QUERIES.tablet} {
+        justify-content: space-between;
+    }
 `;
 
 const Side = styled.div`
     flex: 1;
+
+    @media ${MAX_QUERIES.tablet} {
+        &#side4Laptop {
+            display: none;
+        }
+    }
 `;
 
 const NavLink = styled.a`
-    font-size: 1.125rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: ${COLORS.gray[900]};
-    font-weight: ${WEIGHTS.medium};
+    display: none;
 
-    &:first-of-type {
-        color: ${COLORS.secondary};
+    @media ${MIN_QUERIES.tablet} {
+        display: block;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: ${COLORS.gray[900]};
+        font-weight: ${WEIGHTS.medium};
+
+        &:first-of-type {
+            color: ${COLORS.secondary};
+        }
     }
 `;
 

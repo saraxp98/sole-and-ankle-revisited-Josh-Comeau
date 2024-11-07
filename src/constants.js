@@ -24,8 +24,14 @@ export const BREAKPOINTS = {
     laptop: 81.25,
 }
 
-export const QUERIES = {
-    'phoneAndUp': `(min-width: ${BREAKPOINTS.phone}rem)`,
-    'tabletAndUp': `(min-width: ${BREAKPOINTS.tablet}rem)`,
-    'laptopAndUp': `(min-width: ${BREAKPOINTS.laptop}rem)`,
+export const MIN_QUERIES = {
+    'phone': `(min-width: ${BREAKPOINTS.phone}rem)`,
+    'tablet': `(min-width: ${BREAKPOINTS.tablet}rem)`,
+    'laptop': `(min-width: ${BREAKPOINTS.laptop}rem)`,
+}
+
+export const MAX_QUERIES = {
+    'phone': `(max-width: ${BREAKPOINTS.phone}rem)`,
+    'tablet': `(max-width: ${BREAKPOINTS.tablet}rem)`,
+    'laptop': `(max-width: ${BREAKPOINTS.laptop}rem)`,
 }

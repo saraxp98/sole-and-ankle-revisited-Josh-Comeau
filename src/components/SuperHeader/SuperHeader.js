@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import {COLORS, QUERIES} from '../../constants';
+import {COLORS, MIN_QUERIES} from '../../constants';
 
 import SearchInput from '../SearchInput';
 import UnstyledButton from '../UnstyledButton';
@@ -24,8 +24,8 @@ const SuperHeader = () => {
 
 const Wrapper = styled.div`
     display: none;
-    
-    @media ${QUERIES.tabletAndUp} {
+
+    @media ${MIN_QUERIES.tablet} {
         display: flex;
         align-items: center;
         gap: 24px;
