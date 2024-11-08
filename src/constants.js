@@ -19,19 +19,13 @@ export const WEIGHTS = {
 
 
 export const BREAKPOINTS = {
-    phone: 37.5,
-    tablet: 59.375,
-    laptop: 81.25,
+    phone: 37.5, /*max 600px*/
+    tablet: 59.375,/*max 950px*/
+    laptop: 81.25,/*max 1300px*/
 }
 
-export const MIN_QUERIES = {
-    'phone': `(min-width: ${BREAKPOINTS.phone}rem)`,
-    'tablet': `(min-width: ${BREAKPOINTS.tablet}rem)`,
-    'laptop': `(min-width: ${BREAKPOINTS.laptop}rem)`,
-}
-
-export const MAX_QUERIES = {
-    'phone': `(max-width: ${BREAKPOINTS.phone}rem)`,
-    'tablet': `(max-width: ${BREAKPOINTS.tablet}rem)`,
-    'laptop': `(max-width: ${BREAKPOINTS.laptop}rem)`,
+export const QUERIES = {
+    'phoneAndSmaller': `(max-width: ${BREAKPOINTS.phone}rem)`,
+    'tabletAndSmaller': `(max-width: ${BREAKPOINTS.tablet}rem)`,
+    'laptopAndSmaller': `(max-width: ${BREAKPOINTS.laptop}rem)`,
 }

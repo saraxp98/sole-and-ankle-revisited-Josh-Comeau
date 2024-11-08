@@ -16,9 +16,9 @@ We'll use a **desktop-first** approach for this process, and our breakpoints wil
 
 | Name   | Width (px) | Width (rem) |
 | ------ | ---------- | ----------- |
-| phone  | 600        | 37.5        |
-| tablet | 950        | 59.375      |
-| laptop | 1300       | 81.25       |
+| phoneAndSmaller  | 600        | 37.5        |
+| tabletAndSmaller | 950        | 59.375      |
+| laptopAndSmaller | 1300       | 81.25       |
 
 ## Troubleshooting
 
@@ -50,11 +50,11 @@ On mobile, a lot of the spacing gets tightened up.
 
 ## Exercise 3: Tweaks to our main view
 
-On portrait tablet, our left-hand column disappears.
+On portrait tabletAndSmaller, our left-hand column disappears.
 
 The categories are really more of a nice-to-have, so they're removed. The breadcrumbs, though, are important for navigation, so they move to sit just above the category heading:
 
-![Screenshot of the new breadcrumbs on tablet/phone](./docs/tablet-breadcrumbs.png)
+![Screenshot of the new breadcrumbs on tabletAndSmaller/phoneAndSmaller](./docs/tablet-breadcrumbs.png)
 
 On mobile, we lose the "Sort" filter as well:
 

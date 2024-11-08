@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import {COLORS, MAX_QUERIES, MIN_QUERIES, WEIGHTS} from '../../constants';
+import {COLORS, QUERIES, WEIGHTS} from '../../constants';
 import Logo from '../Logo';
 import SuperHeader from '../SuperHeader';
 import MobileMenu from '../MobileMenu';
@@ -64,25 +64,28 @@ const Nav = styled.nav`
     display: flex;
     gap: 48px;
     margin: 0 48px;
-    //background-color: crimson;
 
-    @media ${MAX_QUERIES.phone} {
-        gap: 1rem;
+    #shoppingBagBtn, #searchBtn, #menuBtn {
+        display: none;
     }
 
-    @media ${MIN_QUERIES.tablet} {
+    @media ${QUERIES.tabletAndSmaller} {
         gap: 2rem;
 
         #shoppingBagBtn, #searchBtn, #menuBtn {
-            display: none;
+            display: block;
         }
+    }
+    
+    @media ${QUERIES.phoneAndSmaller} {
+        gap: 1rem;
     }
 `;
 
 const Side = styled.div`
     flex: 1;
 
-    @media ${MAX_QUERIES.tablet} {
+    @media ${QUERIES.tabletAndSmaller} {
         &#side4Laptop {
             display: none;
         }
@@ -90,19 +93,19 @@ const Side = styled.div`
 `;
 
 const NavLink = styled.a`
-    display: none;
+    display: block;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: ${COLORS.gray[900]};
+    font-weight: ${WEIGHTS.medium};
 
-    @media ${MIN_QUERIES.tablet} {
-        display: block;
-        font-size: 1.125rem;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: ${COLORS.gray[900]};
-        font-weight: ${WEIGHTS.medium};
+    &:first-of-type {
+        color: ${COLORS.secondary};
+    }
 
-        &:first-of-type {
-            color: ${COLORS.secondary};
-        }
+    @media ${QUERIES.tabletAndSmaller} {
+        display: none;
     }
 `;
 

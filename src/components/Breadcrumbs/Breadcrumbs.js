@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import { COLORS } from '../../constants';
 
-const Breadcrumbs = ({ children }) => {
+const Breadcrumbs = ({ children, visibility }) => {
   return <Wrapper>{children}</Wrapper>;
 };
 
