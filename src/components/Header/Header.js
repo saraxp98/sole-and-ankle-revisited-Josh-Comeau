@@ -20,9 +20,9 @@ const Header = () => {
         <header>
             <SuperHeader/>
             <MainHeader>
-                <Side>
+                <LogoWrapper>
                     <Logo/>
-                </Side>
+                </LogoWrapper>
                 <Nav>
                     <NavLink href="/sale">Sale</NavLink>
                     <NavLink href="/new">New&nbsp;Releases</NavLink>
@@ -58,6 +58,19 @@ const MainHeader = styled.div`
     padding: 18px 32px;
     height: 72px;
     border-bottom: 1px solid ${COLORS.gray[300]};
+
+    // When tablet & smaller, it's visible only this border!
+    border-top: 4px solid ${COLORS.gray[900]};
+
+    @media ${QUERIES.tabletAndSmaller} {
+        padding: 1.90rem;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @media ${QUERIES.phoneAndSmaller} {
+        padding: 1rem;
+    }
 `;
 
 const Nav = styled.nav`
@@ -71,14 +84,23 @@ const Nav = styled.nav`
 
     @media ${QUERIES.tabletAndSmaller} {
         gap: 2rem;
-
+        margin: 0;
+        
         #shoppingBagBtn, #searchBtn, #menuBtn {
             display: block;
         }
     }
-    
+
     @media ${QUERIES.phoneAndSmaller} {
         gap: 1rem;
+    }
+`;
+
+const LogoWrapper = styled.div`
+    flex: 1;
+    
+    @media ${QUERIES.tabletAndSmaller} {
+        flex: revert;
     }
 `;
 
