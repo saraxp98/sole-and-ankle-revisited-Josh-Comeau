@@ -26,6 +26,7 @@ const Header = () => {
                 <Nav>
                     <NavLink href="/sale">Sale</NavLink>
                     <NavLink href="/new">New&nbsp;Releases</NavLink>
+                    {/*<NavLink href="/men">Men</NavLink>*/}
                     <NavLink href="/men">Men</NavLink>
                     <NavLink href="/women">Women</NavLink>
                     <NavLink href="/kids">Kids</NavLink>
@@ -44,10 +45,8 @@ const Header = () => {
                 <Side id="side4Laptop"/>
             </MainHeader>
 
-            <MobileMenu
-                isOpen={showMobileMenu}
-                onDismiss={() => setShowMobileMenu(false)}
-            />
+            <MobileMenu isOpen={showMobileMenu} onDismiss={() => setShowMobileMenu(false)}/>
+
         </header>
     );
 };
@@ -61,6 +60,8 @@ const MainHeader = styled.div`
 
     // When tablet & smaller, it's visible only this border!
     border-top: 4px solid ${COLORS.gray[900]};
+
+    //overflow: auto;
 
     @media ${QUERIES.tabletAndSmaller} {
         padding: 1.90rem;
@@ -77,7 +78,7 @@ const Nav = styled.nav`
     display: flex;
     gap: 48px;
     margin: 0 48px;
-
+    
     #shoppingBagBtn, #searchBtn, #menuBtn {
         display: none;
     }
