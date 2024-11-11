@@ -26,7 +26,7 @@ const Header = () => {
                 <Nav>
                     <NavLink href="/sale">Sale</NavLink>
                     <NavLink href="/new">New&nbsp;Releases</NavLink>
-                    {/*<NavLink href="/men">Men</NavLink>*/}
+                    <NavLink href="/men">Men</NavLink>
                     <NavLink href="/men">Men</NavLink>
                     <NavLink href="/women">Women</NavLink>
                     <NavLink href="/kids">Kids</NavLink>
@@ -55,7 +55,6 @@ const MainHeader = styled.div`
     display: flex;
     align-items: baseline;
     padding: 18px 32px;
-    height: 72px;
     border-bottom: 1px solid ${COLORS.gray[300]};
 
     // When tablet & smaller, it's visible only this border!
@@ -76,9 +75,9 @@ const MainHeader = styled.div`
 
 const Nav = styled.nav`
     display: flex;
-    gap: 48px;
     margin: 0 48px;
-    
+    gap: clamp(1.25rem, 9.2vw - 4.5rem, 3rem);
+
     #shoppingBagBtn, #searchBtn, #menuBtn {
         display: none;
     }
@@ -86,7 +85,7 @@ const Nav = styled.nav`
     @media ${QUERIES.tabletAndSmaller} {
         gap: 2rem;
         margin: 0;
-        
+
         #shoppingBagBtn, #searchBtn, #menuBtn {
             display: block;
         }
